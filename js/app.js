@@ -34,13 +34,22 @@ $(document).ready(function()
 
                                         $("#fazer").append(post_it);
 
-                                        $('.moveFazendo').click(function()
+                                        $('.moveFazendo').unbind().click(function()
                                                 {
                                                         $(this).parent()
                                                                 .removeClass("alert-warning")
                                                                 .addClass("alert-primary")
+                                                                .append($("<br>"))
+                                                                .append($('<div></div>')
+                                                                        .attr('id', "error2")
+                                                                        .append($('<strong></strong>'))
+                                                                        .text('Digite um nome válido!')
+                                                                        .addClass('alert')
+                                                                        .addClass('alert-danger'))
                                                                 .append($('<input name="nome" maxlength="15" type="text" placeholder="Digite seu nome">')
-                                                                .addClass('nome'))
+                                                                        .attr('id', idGenerator())
+                                                                        .addClass('nome'))
+                                                                .append($("<br>"))
                                                                 .append($("<button>Adicionar</button>")
                                                                         .addClass('btn')
                                                                         .addClass('badge')
@@ -48,21 +57,25 @@ $(document).ready(function()
                                                                         .addClass('badge-light')
                                                                         .addClass('addNome'));
 
-                                                        $('.addNome').click(function()
-                                                                {
-                                                                        var texto = $(this).parent().find('input:text[name="nome"]').val();
+                                                        $('.addNome').unbind().click(function()                                                                {
 
-                                                                        if (texto.length === 0 || !texto.trim())
-                                                                        {
-                                                                                $('#error2').show();
-                                                                        } 
-                                                                        else 
-                                                                        {
-                                                                                $(this).parent().find('p').append("<br>--<br>" + texto);
-                                                                                $(this).hide();
-                                                                                $(this).parent().find('input:text[name="nome"]').hide();
-                                                                        }
-                                                                })
+                                                                var texto = $(this).parent().find('input:text[name="nome"]').val();
+
+                                                                if (texto.length === 0 || !texto.trim())
+                                                                {
+                                                                        $('#error2').show();
+                                                                } 
+                                                                else 
+                                                                {
+                                                                        $('#error2').hide();
+
+                                                                        $(this).parent().find('p').append("<br>--<br>" + texto);
+
+                                                                        $(this).hide();
+
+                                                                        $(this).parent().find('input:text[name="nome"]').hide();
+                                                                }
+                                                        })
 
                                                         $(this).removeClass("moveFazendo")
                                                                 .removeClass("btn-warning")
@@ -73,11 +86,21 @@ $(document).ready(function()
 
                                                         $('.moveFeito').click(function()
                                                                 {
+                                                                        $(this).hide();
+
+                                                                        $('#error2').hide();
+
                                                                         $(this).parent()
                                                                                 .removeClass("alert-warning")
                                                                                 .addClass("alert-success");
 
-                                                                        $(this).hide();
+                                                                        if ($(this).parent().find('input:text[name="nome"]').val() == '')
+                                                                        {
+                                                                                $(this).parent().find('p').append("<br>--<br>Anônimo");
+                                                                        }
+
+                                                                        $(this).parent().find('input:text[name="nome"]').hide();
+                                                                        $(this).parent().find('.addNome').hide();
 
                                                                         $('#feito').append(document.getElementById($(this).parent().attr('id')));
                                                                 })

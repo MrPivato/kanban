@@ -1,4 +1,5 @@
-#error {
+#error, #error2 {
+        margin-top: 15px;
         display: none;
 }
 
