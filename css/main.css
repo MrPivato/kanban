@@ -1,0 +1,51 @@
+#error {
+        display: none;
+}
+
+table {
+        border-collapse: collapse;
+        width: 100%;
+}
+
+th, td {
+        text-align: center;
+        padding: 8px;
+}
+
+tr:nth-child(even) {
+        background-color: #f2f2f2
+}
+
+th {
+        background-color: #0e2f44;
+        color: white;
+}
+
+textarea {
+        width: 100%;
+        color: #000000;
+        height: 100px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+}
+
+#fazer, #feito, #fazendo {
+        width: 25%;
+}
+
+p {
+        width: 100%;
+        word-wrap: break-word;
+}
+
+div {
+        width: 100%;
+}
+
+input[type=text] {
+        margin-top: 10px;
+        font-size: 9pt;
+}
