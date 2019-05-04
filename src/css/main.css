@@ -1,0 +1,89 @@
+body {
+    background-image: url("../imgs/pape.jpg");
+    background-color: #111111;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: 100% 100%;
+    font-family: 'Gugi', cursive;
+}
+
+#error,
+#error2 {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+th {
+    background-color: #000000;
+    color: #27BAE8;
+}
+
+.tableHead {
+    font-size: 1.5em;
+}
+
+th {
+    width: 33.333%;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+    word-break: break-all;
+    
+}
+
+input[type=text] {
+    margin: 10px;
+    font-size: 9pt;
+}
+
+#add {
+    border-radius: 0px;
+    background-color: #33cc33;
+    color: #f9f9f9;
+}
+
+.todo,
+.doing,
+.done {
+    width: 100%;
+    margin-top: 5px;
+    padding: 20px;
+    outline-offset: -10px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.todo {
+    color: #0040ff;
+    outline: 3px solid #0040ff;
+}
+
+.doing {
+    color: #ffbf00;
+    outline: 3px solid #ffbf00;
+}
+
+.done {
+    color: #33cc33;
+    outline: 3px solid #33cc33;
+}
+
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    margin: 10px;
+    color: inherit;
+}
